@@ -33,3 +33,6 @@ class Visit(models.Model):
         else:
             delta = localtime() - localtime(self.entered_at)
         return delta
+
+    def is_long(self, minutes=60):
+        return self.get_duration().total_seconds() > minutes*60
