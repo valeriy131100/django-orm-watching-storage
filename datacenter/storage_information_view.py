@@ -2,15 +2,7 @@ from datacenter.models import Passcard
 from datacenter.models import Visit
 from django.shortcuts import render
 from django.utils.timezone import localtime
-from math import floor
-
-
-def format_duration(duration):
-    seconds = floor(duration.total_seconds())
-    hours = seconds // 3600
-    minutes = (seconds % 3600) // 60
-    result = f'{hours}ч {minutes}мин'
-    return result
+from .models import format_duration
 
 
 def storage_information_view(request):

@@ -1,5 +1,14 @@
 from django.db import models
 from django.utils.timezone import localtime
+from math import floor
+
+
+def format_duration(duration):
+    seconds = floor(duration.total_seconds())
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    result = f'{hours}ч {minutes}мин'
+    return result
 
 
 class Passcard(models.Model):
