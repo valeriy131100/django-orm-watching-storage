@@ -6,8 +6,6 @@ from .models import format_duration
 
 
 def storage_information_view(request):
-    # Программируем здесь
-
     non_closed_visits = [
         {
             'who_entered': visit.passcard.owner_name,
