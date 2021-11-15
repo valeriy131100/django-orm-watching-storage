@@ -9,7 +9,7 @@ DATABASES = {'default': dj_database_url.parse(env('DB_URL'), conn_max_age=600)}
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env.bool('DEBUG')
 
